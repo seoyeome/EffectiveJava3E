@@ -3,6 +3,9 @@
 ### 적합한 인터페이스만 있다면 매개변수뿐 아니라 반환값, 변수, 필드를 전부 인터페이스 타입으로 선언하라.
 - 객체의 실제 클래스를 사용해야 할 상황은 '오직' 생성자로 생성할 때뿐이다.
 
+AnalysisTargetDocument
+FileAnalysisTargetDocument, UrlAnalysisTargetDocument << AnalysisTargetDocument
+
 ```java
 //좋은 예. 인터페이스를 타입으로 사용했다.
 
@@ -18,7 +21,7 @@ LinkedHashSet<Son> sonSet = new LinkedHashSet<>();
 
 ### HashMap
 - 순서 보장 없음 : "HashMap"은 키-값 쌍을 저장할 때 순서를 보장하지 않습니다. 즉, 맵에 요소를 추가한 순서와 순회할 때의 순서가 다를 수 있습니다.
-- 속도가 더 빠름 : 일반적으로 'HashMap'은 'LinkedHashMap'보다 약간 더 빠른 접근 속드를 가집니다.
+- 속도가 더 빠름 : 일반적으로 'HashMap'은 'LinkedHashMap'보다 약간 더 빠른 접근 속도를 가집니다.
 
 ### LinkedHashMap
 - 삽입 순서 보장 : 'LinkedHashMap'은 요소를 추가한 순서대로 순회합니다. 따라서 순서가 중요하다면 'LinkedHashMap'을 사용하는 것이 좋습니다.

@@ -14,7 +14,16 @@ try {
 - 예외를 번역할 때, 저수준 예외가 디버깅에 도움이 된다면 예외 연쇄(exception chaining)를 사용하는게 좋다.
 
 ### 아래 계층에서의 예외를 피할 수 없다면, 상웨 계층에서 그 예외를 조용히 처리하여 문제를 API 호출자에까지 전파하지 않는 방법이 있다.
-- java.util.loggin 같은 적절한 로깅 기능을 화룡하여 기록해두면 좋다.
+- java.util.logging 같은 적절한 로깅 기능을 화룡하여 기록해두면 좋다.
+
+### 73-2. 예외 연쇄
+```java
+try {
+    ... // 저수준 추상화를 이용한다.
+} catch (LowerLevelException cause) {
+    throw new HigherLevelException(cause);
+}
+```
 
 ```java
 핵심 정리
